@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class BookAction {
 
@@ -15,6 +16,7 @@ public class BookAction {
     private TbSort tbSort;
     private  String buyTime;
     private  String sortId;
+    private List<TbBooks> display;
     @Resource
     private StaffService staffService;
 
@@ -54,7 +56,13 @@ public class BookAction {
         this.sortId = sortId;
     }
 
+    public List<TbBooks> getDisplay() {
+        return display;
+    }
 
+    public void setDisplay(List<TbBooks> display) {
+        this.display = display;
+    }
 
     public void setStaffService(StaffService staffService) {
         this.staffService = staffService;
@@ -72,15 +80,16 @@ public class BookAction {
 
     }
 
-    public  String addbook(){
-           tbBooks.setBuytime(dateUtil(buyTime));
-           tbSort.setId(tbSort.getId());
-           tbBooks.setSort(tbSort);
+    public  String addbook() {
+        tbBooks.setBuytime(dateUtil(buyTime));
+        tbSort.setId(tbSort.getId());
+        tbBooks.setSort(tbSort);
         boolean b = staffService.addBook(tbBooks);
-        if (b)
-            return "login";
-        else
-            return "addbook";
-
+        if (b) {
+            display = staffService.display();
+            System.out.println(display.get(0).getAuthor());
+            return "all";
+        }else
+            return null;
     }
 }

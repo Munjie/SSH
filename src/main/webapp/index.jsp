@@ -14,5 +14,6 @@
 </form>
 <a href="register.jsp">注册</a>
 <a href="addbook.jsp">添加书</a>
+<a href="showbook.action"></a>
 </body>
 </html>

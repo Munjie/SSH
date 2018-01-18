@@ -9,7 +9,7 @@
         <property name="name" column="NAME"/>
         <property name="author" column="AUTHOR"/>
         <property name="buytime" column="BUYTIME"/>
-        <many-to-one name="sort" class="com.mwj.model.TbSort">
+        <many-to-one name="sort" class="com.mwj.model.TbSort" fetch="join" lazy="false">
             <column name="SORT_ID" not-null="false"/>
         </many-to-one>
     </class>

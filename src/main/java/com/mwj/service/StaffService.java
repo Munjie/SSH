@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Service
@@ -33,6 +34,12 @@ public class StaffService {
 
         return  staffDao.addBook(tbBooks);
 
+    }
+
+    public List<TbBooks> display(){
+
+
+        return staffDao.display();
 
     }
 }

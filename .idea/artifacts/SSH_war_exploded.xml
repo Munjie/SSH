@@ -41,6 +41,7 @@
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.2" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.31" />
           <element id="library" level="project" name="Maven: org.aspectj:com.springsource.org.aspectj.weaver:1.6.8.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

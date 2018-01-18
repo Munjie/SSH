@@ -18,8 +18,11 @@
 
         <action name="addbook" class="bookInfoAction" method="addbook">
             <result name="login">index.jsp</result>
+            <result name="all">all.jsp</result>
             <result name="addbook">addbook.jsp</result>
         </action>
+
+
 
     </package>
 
