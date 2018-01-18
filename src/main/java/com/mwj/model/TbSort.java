@@ -58,4 +58,13 @@ public class TbSort {
     public void setBooks(Set<TbBooks> books) {
         this.books = books;
     }
+
+    public TbSort() {
+    }
+
+    public TbSort(long id, String name, Set<TbBooks> books) {
+        this.id = id;
+        this.name = name;
+        this.books = books;
+    }
 }

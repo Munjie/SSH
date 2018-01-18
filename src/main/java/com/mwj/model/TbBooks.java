@@ -1,7 +1,7 @@
 package com.mwj.model;
 
 import javax.persistence.*;
-import java.sql.Time;
+import java.util.Date;
 
 @Entity
 @Table(name = "TB_BOOKS", schema = "SCOTT", catalog = "")
@@ -9,8 +9,17 @@ public class TbBooks {
     private long id;
     private String name;
     private String author;
-    private Time buytime;
+    private Date buyDate;
     private TbSort sort;
+    private Object buytime;
+
+    public Object getBuytime() {
+        return buytime;
+    }
+
+    public void setBuytime(Object buytime) {
+        this.buytime = buytime;
+    }
 
     @Id
     @Column(name = "ID", nullable = false, precision = 0)
@@ -43,13 +52,13 @@ public class TbBooks {
     }
 
     @Basic
-    @Column(name = "BUYTIME", nullable = true)
-    public Time getBuytime() {
-        return buytime;
+    @Column(name = "BUYDate", nullable = true)
+    public Date getBuyDate() {
+        return buyDate;
     }
 
-    public void setBuytime(Time buytime) {
-        this.buytime = buytime;
+    public void setBuyDate(Date buyDate) {
+        this.buyDate = buyDate;
     }
 
     @Override
@@ -62,7 +71,7 @@ public class TbBooks {
         if (id != tbBooks.id) return false;
         if (name != null ? !name.equals(tbBooks.name) : tbBooks.name != null) return false;
         if (author != null ? !author.equals(tbBooks.author) : tbBooks.author != null) return false;
-        if (buytime != null ? !buytime.equals(tbBooks.buytime) : tbBooks.buytime != null) return false;
+        if (buyDate != null ? !buyDate.equals(tbBooks.buyDate) : tbBooks.buyDate != null) return false;
 
         return true;
     }
@@ -72,7 +81,7 @@ public class TbBooks {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (author != null ? author.hashCode() : 0);
-        result = 31 * result + (buytime != null ? buytime.hashCode() : 0);
+        result = 31 * result + (buyDate != null ? buyDate.hashCode() : 0);
         return result;
     }
 
@@ -83,6 +92,17 @@ public class TbBooks {
     }
 
     public void setSort(TbSort sort) {
+        this.sort = sort;
+    }
+
+    public TbBooks() {
+    }
+
+    public TbBooks(long id, String name, String author, Date buyDate, TbSort sort) {
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.buyDate = buyDate;
         this.sort = sort;
     }
 }

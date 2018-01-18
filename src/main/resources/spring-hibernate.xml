@@ -19,6 +19,8 @@
         <property name="mappingResources">
             <list>
                 <value>map/Staff.hbm.xml</value>
+                <value>map/TbBooks.hbm.xml</value>
+                <value>map/TbSort.hbm.xml</value>
             </list>
         </property>
     </bean>
