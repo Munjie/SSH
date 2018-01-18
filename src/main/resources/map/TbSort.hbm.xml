@@ -5,15 +5,11 @@
 <hibernate-mapping>
 
     <class name="com.mwj.model.TbSort" table="TB_SORT" schema="SCOTT">
-        <id name="id">
-            <column name="ID" sql-type="number(6)" precision="6"/>
-        </id>
-        <property name="name">
-            <column name="NAME" sql-type="varchar2(20)" length="20"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="name" column="NAME"/>
         <set name="books" inverse="true">
             <key>
-                <column name="ID"/>
+                <column name="SORT_ID" not-null="true"/>
             </key>
             <one-to-many not-found="ignore" class="com.mwj.model.TbBooks"/>
         </set>

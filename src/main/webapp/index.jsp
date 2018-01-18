@@ -1,4 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@page pageEncoding="UTF-8" %>
 
 <html>
 <body>
@@ -11,6 +12,7 @@
 
     <input type="submit" value="submit"><br>
 </form>
-<a href="register.jsp">register</a>
+<a href="register.jsp">注册</a>
+<a href="addbook.jsp">添加书</a>
 </body>
 </html>

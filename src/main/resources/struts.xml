@@ -16,6 +16,11 @@
             <result name="register">register.jsp</result>
         </action>
 
+        <action name="addbook" class="bookInfoAction" method="addbook">
+            <result name="login">index.jsp</result>
+            <result name="addbook">addbook.jsp</result>
+        </action>
+
     </package>
 
 </struts>

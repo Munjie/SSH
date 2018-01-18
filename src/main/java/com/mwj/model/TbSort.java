@@ -1,17 +1,12 @@
 package com.mwj.model;
 
-import javax.persistence.*;
 import java.util.Set;
 
-@Entity
-@Table(name = "TB_SORT", schema = "SCOTT", catalog = "")
 public class TbSort {
     private long id;
     private String name;
     private Set<TbBooks> books;
 
-    @Id
-    @Column(name = "ID", nullable = false, precision = 0)
     public long getId() {
         return id;
     }
@@ -20,8 +15,6 @@ public class TbSort {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "NAME", nullable = false, length = 20)
     public String getName() {
         return name;
     }
@@ -50,21 +43,11 @@ public class TbSort {
         return result;
     }
 
-    @OneToMany(mappedBy = "sort")
     public Set<TbBooks> getBooks() {
         return books;
     }
 
     public void setBooks(Set<TbBooks> books) {
-        this.books = books;
-    }
-
-    public TbSort() {
-    }
-
-    public TbSort(long id, String name, Set<TbBooks> books) {
-        this.id = id;
-        this.name = name;
         this.books = books;
     }
 }

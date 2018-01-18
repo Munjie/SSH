@@ -14,6 +14,7 @@ public class BookAction {
     private TbBooks tbBooks;
     private TbSort tbSort;
     private  String buyTime;
+    private  String sortId;
     @Resource
     private StaffService staffService;
 
@@ -45,6 +46,16 @@ public class BookAction {
         return staffService;
     }
 
+    public String getSortId() {
+        return sortId;
+    }
+
+    public void setSortId(String sortId) {
+        this.sortId = sortId;
+    }
+
+
+
     public void setStaffService(StaffService staffService) {
         this.staffService = staffService;
     }
@@ -61,9 +72,10 @@ public class BookAction {
 
     }
 
-    public  String addBook(){
-
-           tbBooks.setBuyDate(dateUtil(buyTime));
+    public  String addbook(){
+           tbBooks.setBuytime(dateUtil(buyTime));
+           tbSort.setId(tbSort.getId());
+           tbBooks.setSort(tbSort);
         boolean b = staffService.addBook(tbBooks);
         if (b)
             return "login";

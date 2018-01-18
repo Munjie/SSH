@@ -5,5 +5,6 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="userInfoAction" class="com.mwj.action.StaffAction"></bean>
+    <bean id="bookInfoAction" class="com.mwj.action.BookAction"></bean>
 
 </beans>
