@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.mwj.model.TbBooks" table="TB_BOOKS" schema="SCOTT">
+        <id name="id">
+            <column name="ID" sql-type="number(6)" precision="6"/>
+        </id>
+        <property name="name">
+            <column name="NAME" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="author">
+            <column name="AUTHOR" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="buytime">
+            <column name="BUYTIME" sql-type="date" not-null="true"/>
+        </property>
+        <many-to-one name="sort" class="com.mwj.model.TbSort">
+            <column name="ID"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
